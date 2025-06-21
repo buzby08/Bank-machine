@@ -1,6 +1,4 @@
 import os
-from pprint import pprint
-import subprocess
 import sys
 import bcrypt
 import getpass
@@ -155,7 +153,7 @@ def hash_pw(message: str) -> bytes:
 
     bytes_message: bytes = message.encode()
     
-    return cast(bytes, bcrypt.hashpw(bytes_message, salt))
+    return bcrypt.hashpw(bytes_message, salt)
 
 
 
